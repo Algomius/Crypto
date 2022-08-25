@@ -1,0 +1,20 @@
+fonction encode_cesar(chaine de caractères s, entier décalage): chaine de caractères
+Variable locale
+	chaine_codée : chaine de caractères
+	indice : entier
+Début
+	chaine_codée = ""
+	pour chaque élément de s
+		si élément est une lettre majuscule alors
+			indice <- indice de la lettre élément
+			indice <- (indice + décalage) % 26
+			chaine_codée = chaine_codée + la lettre au rang indice
+		sinon
+			chaine_codée = chaine_codée + élément		
+		fsi
+	fpour
+Fin
+
+
+msg_code <-- encode_césar('BONJOUR', 3)
+msg_clair <-- encode_césar(msg_code , -3)

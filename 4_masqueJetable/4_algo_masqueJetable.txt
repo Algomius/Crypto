@@ -1,0 +1,15 @@
+fonction masque_jetable(c : chaine de caractères, clé : chaine de caractères) : chaine de caractères
+Variable locale
+	msg_code : chaine de caractères
+Début
+	msg_code <- "" 
+	pour i de 0 à taille(c) - 1
+			msg_code  <- msg_code + lettre(rang(c[i]) XOR rang(clé[i]))
+	fpour
+    
+	retour <- msg_code  
+Fin
+
+message <-- "message a coder"
+clé <-- n éléments aléatoires compris dans [0; 256[ avec n la longueur du message à coder
+masque_jetable(message, clé)

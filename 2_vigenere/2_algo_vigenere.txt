@@ -1,0 +1,17 @@
+fonction vigenere(c : chaine de caractères, clé : chaine de caractères) : chaine de caractères
+Variable locale
+	indice_cle : entier
+	msg_code : chaine de caractères
+Début
+	indice_cle <- 0
+	msg_code <- "" 
+	pour i de 0 à taille(c) - 1
+		si 'A' <= c[i] <= 'Z' alors
+			msg_code  <- msg_code + lettre((rang(c[i]) + rang(clé[indice_clé])) modulo 26)
+			indice_clé <- (indice_clé + 1) % taille(clé)
+		sinon
+			msg_code  <- msg_code + c[i]
+		fsi
+	fpour
+	retour <- msg_code  
+Fin

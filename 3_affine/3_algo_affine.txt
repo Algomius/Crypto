@@ -1,0 +1,65 @@
+Codage affine
+
+0 <= n1 et n2 <= 25
+
+c1 = (3* n1 + 9) % 26
+c2 = (3* n2 + 9) % 26
+
+Montrons que si n1 <> n 2 alors c1 <> c2
+Par contraposé si C1 = c2 alors n1 = n2
+
+C1 = c2 implique que  (3* n1 + 9) % 26 = (3* n2 + 9) % 26 ou 
+
+3* n1 + 9 congrue à 3* n2 + 9 [26]
+3* n1 congrue à 3* n2 [26]
+3 * (n1 - n2) congrue à 0 [26]
+
+-75 =< 3 * (n1 - n2) <= 75
+
+Valeurs possibles 
+-52 impossible
+-26 impossible
+0 ok, si n1 = n2
+26 impossible
+52 impossible
+
+Conclusion,
+
+On voit que la valeur de b n'a pas une grande influence.
+Si a = 1  on se retrouve avec le cryptage César.
+
+Généralison avec a et b
+
+
+c1 = (a* n1 + b) % 26
+c2 = (a* n2 + b) % 26
+
+Montrons que si n1 <> n 2 alors c1 <> c2
+Par contraposé si C1 = c2 alors n1 = n2
+
+C1 = c2 implique que  (a* n1 + b) % 26 = (a* n2 + b) % 26 ou 
+
+a* n1 + b congrue à a* n2 + b [26]
+a* n1 congrue à a* n2 [26]
+a * (n1 - n2) congrue à 0 [26]
+
+-25 * a =< a * (n1 - n2) <= 25 * a
+
+Il faut donc que a et 26 soient premiers entre eux pour que le codage soit satisfaisant.
+
+
+Valeurs possibles 
+-52 impossible
+-26 impossible
+0 ok, si n1 = n2
+26 impossible
+52 impossible
+
+Le décodage nous apprend en fait pourquoi. Le décodage nécessite de trouver l'inverse modulaire. Soit a.a-1 = 1 [26]
+L'inverse modulaire n'existe que si a et 26 sont premiers entre eux.
+Calcul de l'inverse modulaire avec Excel. Algorithme d'Euler étendu.
+
+
+
+
+
